@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <meta name="description" content="Веб-сервис для поиска соседа и жилья для студентов НИУ ВШЭ">
+       
+        <title>Homeet</title>
+        <link rel="stylesheet" href="css/homeet.css">
+        <script src="libs/gsap.min.js" defer></script>
+        <script src="libs/ScrollSmoother.min.js" defer></script>
+        <script src="libs/ScrollTrigger.min.js" defer></script>
+        <script src="homeetjs.js" defer></script>
+        
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="../src/img/logo.png" alt="Homeet">
+            <button class="logout">Выйти из аккаунта</button>
+        </header>
+        <main>
+            <div class="creation">
+                <button class="back">Назад</button>
+                <div class="creation_profile">
+                    <div class="creation_profile_text">
+                        <h1 style="margin: 0;">Создание профиля</h1>
+                        <p class="grey_text">/</p>
+                        <p class="grey_text">Образование</p>
+                    </div>
+                    <div class="meter">
+                        <meter id="meter" min="0" max="1040" value="408"></meter>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="box_1">
+                    <div class="post">
+                        <input type="radio" class="radio_post" name="x" value="y" id="y" />
+                        <label for="y" class="student">Студент/выпускник</label>
+                        <input type="radio" class="radio_post" name="x" value="z" id="z" />
+                        <label for="z" class="teacher">Сотрудник</label>
+                    </div>
+                    <div class="course">
+                        <h5 class="course_text">Курс</h5>
+                        <div class="course_bar">
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>1</span></label>
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>2</span></label>
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>3</span></label>
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>4</span></label>
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>5</span></label>
+                            <label class="numbers"><input class="radio_numbers" type="radio" name="uu"></input><span>6</span></label>
+                        </div>
+                        <div class="graduate">
+                            <input type="radio" id="checkk" class="graduate_checkbox" name="uu">
+                            <label for="checkk" class="graduated">Уже окончил Вышку</label>
+                        </div>
+                    </div>
+                    <div class="degree">
+                        <form>
+                            <label for="my_stage">Ступень образования</label>
+                            <input list="stages" id="my_stage" name="my_stage" placeholder="Ступень образования" />
+                            <datalist id="stages">
+                          <option value="Бакалавриат">
+                          <option value="Магистратура">
+                        </datalist>
+                        </form>
+                    </div>
+                    <div class="faculty">
+                        <form>
+                            <label for="my_faculty">Факультет</label>
+                            <input list="faculties" id="my_faculty" name="my_faculty" placeholder="Факультет" />
+                            <datalist id="faculties">
+                          <option value="Московский институт электроники и математики им. А. Н. Тихонова">
+                          <option value="Высшая школа бизнеса">
+                          <option value="Факультет гуманитарных наук">
+                          <option value="Факультет права">
+                          <option value="Факультет химии">
+                          <option value="Факультет креативных индустрий">
+                          <option value="Институт классического Востока и античности">
+                          <option value="Факультет городского и регионального развития">
+                          <option value="Факультет экономических наук">
+                          <option value="Факультет биологии и биотехнологии">
+                          <option value="Факултет мировой экономики и мировой политики">
+                          <option value="Факультет компьютерных наук">
+                          <option value="Факультет географии и геоинформационных технологий">
+                          <option value="Факультет математики">
+                          <option value="Школа иностранных языков">
+                          <option value="Факультет социальных наук">
+                          <option value="Международный институт экономики и финансов">
+                          <option value="Факультет физики">
+                          <option value="Школа лингвистики">
+                          <option value="Институт образования">
+                          <option value="Высшая школа юриспруденции и администрирования">
+                          <option value="Высшая школа урбанистики имени А.А.Высоковского">
+                          <option value="Банковский институт">
+                          <option value="Институт демографии имени. А.Г.Вишневского">
+                          <option value="Институт когнитивных нейронаук">
+                          <option value="Институт проблем безопасности">
+                          <option value="Инстиут статистических исследований и экономики знаний">
+                          <option value="Базовая кафедра Музея современного искусства 'Гараж'">
+                          <option value="Институт торговой политики">
+                          <option value="Школа дизайна">
+                          <option value="Школа инноватики и предпринимательства">
+                        </datalist>
+                        </form>
+                    </div>
+                    <div class="program">
+                        <form>
+                            <label for="myHouse">Образовательная программа</label>
+                            <input list="magicHouses" id="myHouse" name="myHouse" placeholder="Образовательная программа" />
+                            <datalist id="magicHouses">
+                          <option value="Gryfindor">
+                          <option value="Hufflepuff">
+                          <option value="Slytherin">
+                          <option value="Ravenclaw">
+                          <option value="Horned Serpent">
+                          <option value="Thunderbird">
+                          <option value="Pukwudgie">
+                          <option value="Wampus">
+                        </datalist>
+                        </form>
+                    </div>
+                        <input type="text" id="my_job" name="my_job" placeholder="Работа">
+                </div>
+                <div class="box_2">
+                    <label for="view" class="box2_text">Так будет выглядеть твоя будущая страница</label>
+                    <div class="profile_view" id="view">
+                        <div class="avatar_view">
+                            <img class="photo_view">
+                            <div class="show_contacts_view">Показать контакты</div>
+                        </div>
+                        <div class="infobox">
+                            <div class="main_info">
+                                <div class="frst_text">
+                                    <div class="name_surname">Саша Фефелов</div>
+                                    <div class="mini_sex">Парень</div>
+                                    <div class="dot"></div>
+                                    <div class="mini_age">21 год</div>
+                                    <div class="dot"></div>
+                                    <div class="mini_course">1 курс бакалавриат ВШБ</div>
+                                </div>
+                                <div class="scnd_text">СТО в Бизнесвсру</div>
+                                <div class="big_text">
+                                    <p class="first_line">Мне нравится дебоширить, ломать мебель, устраивать пьянки  и вообще...</p>
+                                    <input class="hide" id="hd-1" type="checkbox" >
+                                    <label for="hd-1" class="unwrap">Развернуть</label>
+                                    <div class="debosh"> капец. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit ipsa molestias beatae dolorum hic in omnis quaerat similique veniam consectetur, delectus nesciunt quasi. Delectus ipsa voluptates nihil modi laboriosam.</div>
+                                </div>
+                            </div>
+                            <div class="more_info"></div>
+                        </div>
+                    </div>
+                    <div class="tell_me">
+                        <div>
+                            <p class="tell_me_1">Расскажи где ты учишься</p>
+                            <p class="tell_me_2">Часто студенты ищут соседей по схожим интересам</p>
+                        </div>
+                            <img class="smile_face" src="../src/img/smileface.svg" alt=":)">
+                    </div>
+                </div>
+            </div>
+            <div class="continue_button">
+                <button class="continue">Продолжить</button>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_info">
+                <div class="support_section">
+                    <p class="support_mail">Support@homeet.com</p>
+                    <p class="support_tech">Техническая поддержка</p>
+                </div>
+                <div class="contacts_section">
+                    <div class="contacts_text">
+                        <p style="display: block;">О сервисе</p>
+                        <p style="display: block;">Контакты</p>
+                        <p style="display: block;">Политика конфиденциальности</p>
+                    </div>
+                    <div>
+                        <ul class="socials">
+                            <li><a class="socials_vk" href="https://vk.com/ruhomeet" title="вэка" target="_blank" rel="noopener"></a></li>
+                            <li><a class="socials_telegram" href="https://t.me/HomeetChannel" title="тэгэ" target="_blank" rel="noopener"></a></li>
+                        </ul>
+                    </div>    
+                </div>
+            </div>
+            <div style="width: 1040px; height: 1px; background-color: #7953C3; opacity: 0.2;"></div>
+            <div class="footer_mini_text">
+                <div class="offer">
+                    <p>Предложение не является публичной офертой.</p>
+                    <p>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+                </div>
+                <p class="made_by">Сделано в &#160 <span style="color: #5D5B66;">бвср</span></p>
+            </div>
+        </footer>
+        <div style="height: 12px; width: 100%; background-color: #7953C3;"></div>
+    </body>
+</html>
