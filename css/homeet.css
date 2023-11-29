@@ -634,3 +634,24 @@ footer{
     display: flex;
     align-items: end;
 }
+
+.form-control.success input {
+    border-color: var(--success-color);
+}
+  
+.form-control.error input {
+    border-color: #f90000;
+}
+  
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+  
+.form-control.error small {
+    visibility: visible;
+}
+  
