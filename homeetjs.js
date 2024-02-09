@@ -1,41 +1,29 @@
-const userName = document.querySelector('.nameInput');
 
-/* const form = document.querySelector('.box_1');
-const telegram = document.querySelector('.telegram');
-
-function showError(input, message) {
-    const formControl = input.parentElement;
-    formControl.className = "form-control error";
-    const small = formControl.querySelector(".small1");
-    small1.innerText = sasi;
-}
-
-function showSuccess(input) {
-    const formControl = input.parentElement;
-    formControl.className = "form-control success";
-}
-
-function checkEmail(input) {
-    const re = @;
-    if (!(re.test(input.value.trim()))) {
-      showError(input, "телеграм неверный");
+//выводим загруженную аватарку в превью
+function readURL(input)
+{
+    if(input.files && input.files[0]){
+        var reader= new FileReader();
+        reader.onload=function(e)
+        {
+            var fileurl=e.target.result;
+            $('.profile_pic').attr('src',fileurl);
+        }
+        reader.readAsDataURL(input.files[0]);
     }
-} */
-
-/* form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    if (checkRequired([userName, telegram])) {
-      checkEmail(telegram);
-    }
+}
+$(".file_upload").on('change',function(){
+readURL(this);
 });
- */
 
+// выводим ФИ в превью
+const userName = document.querySelector('.nameInput');
 let nameSurname = document.querySelector('.name_surname');
 userName.addEventListener('input', ()=>{
     nameSurname.innerHTML = userName.value;
 })
 
+// выводим пол в превью
 let miniSex = document.querySelector('.mini_sex');
 let radioGender = document.querySelectorAll('.radio_gender')
 radioGender.forEach( (item) => {
@@ -48,6 +36,7 @@ radioGender.forEach( (item) => {
     }}) 
 })
 
+// считаем возраст из даты рождения
 function getAge(dateString) {
     let today = new Date();
     let birthDate = new Date(dateString);
@@ -59,15 +48,26 @@ function getAge(dateString) {
     return age;
 }
 
+// выводим возраст в превью
 let miniAge = document.querySelector('.mini_age');
 let userAge = document.querySelector('.user_age')
 userAge.addEventListener('change', ()=>{
     miniAge.innerHTML = getAge(userAge.value) + ' лет';
 })
 
+// выводим текст "О себе" в превью
 let userInfo = document.querySelector('.userInfo1');
 let bigText = document.querySelector('.big_text');
 userInfo.addEventListener('input', ()=>{
     bigText.innerHTML = userInfo.value;
 })
 
+
+
+/* const btnSend= document.getElementById('btnSend');
+document.querySelector('form').addEventListener('keyup', validate, false)
+
+function validate(e){
+   btnSend.disabled = !e.target.checkValidity()
+} */
+ 

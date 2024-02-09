@@ -37,15 +37,16 @@
             <div class="info">
                 <form class="box_1">
                     <div class="avatar_section">
-                        <div class="upload_space">
                             <div class="avatar_text">Аватар профиля</div>
-                            <button class="upload_button">Загрузить</button>
-                        </div>
-                        <div class="upload_text" style="font-size: 14px; font-weight: 400; color:#CCCCCC;">Загрузите фотографию весом не более 10мб</div>
+                            <div class="upload_button" id="upload_button_id">
+                            <div class="uploud_button_text">Загрузить</div>
+                            </div>
+                            <input class="file_upload" type="file" accept="image/*"></input>
+                            <div class="upload_text" style="font-size: 14px; font-weight: 400; color:#CCCCCC;">Загрузите фотографию весом не более 10мб</div>
                     </div>
                     <div class="form_section">
                         <div class="name_and_gender">
-                            <label class="name"><input class="nameInput" type="text" id="name" placeholder="Имя и фамилия" required pattern = /^[а-яА-Я ]/></label>
+                            <label class="name"><input class="nameInput" type="text" id="name" placeholder="Имя и фамилия" pattern= [а-яА-яЁё\s]+ /></label>
                             <div class="gender">
                                 <input type="radio" class="radio_gender" name="x" value="y" id="y" />
                                 <label for="y" class="boy">Парень</label>
@@ -61,15 +62,15 @@
                             $( "#datepicker" ).datepicker();
                             });
                         </script>
-                        <label class="date"><input type="text" class="user_age" id="datepicker" placeholder="Дата рождения" required></label>
+                        <label class="date"><input type="text" class="user_age" id="datepicker" placeholder="Дата рождения"></label>
                         <div class="telegram_space">
-                            <label class="telegram"><input type="text" id="telegram" placeholder="Телеграм" required></label>
+                            <label class="telegram"><input type="text" id="telegram" placeholder="Телеграм" pattern=(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)></label>
                         </div>
                         <div class="phonenumber_space">
-                            <label class="phonenumber"><input type="phone" id="phonenumber" placeholder="Номер телефона" required></label>
+                            <label class="phonenumber"><input type="phone" id="phonenumber" placeholder="Номер телефона" pattern= (\+7|7|8)([0-9]){10} /></label>
                         </div>
                         <div class="aboutme_space">
-                            <label class="aboutme"><input type="text" class="userInfo1" id="aboutme" placeholder="О себе" required></label>
+                            <label class="aboutme"><input type="text" class="userInfo1" id="aboutme" placeholder="О себе" pattern = [а-яА-яЁёа-zA-Z\s\p]+ /></label>
                             <div class="underground_text">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</div>
                         </div>
                     </div>
@@ -78,7 +79,7 @@
                     <label for="view" class="box2_text">Так будет выглядеть твоя будущая страница</label>
                     <div class="profile_view" id="view">
                         <div class="avatar_view">
-                            <img class="photo_view">
+                            <img class="profile_pic">
                             <div class="show_contacts_view">Показать контакты</div>
                         </div>
                         <div class="infobox">
@@ -112,7 +113,7 @@
                 </div>
             </div>
             <div class="continue_button">
-                <button class="continue">Продолжить</button>
+                <button type="submit" form="box_1" class="continue" id="btnSend" >Продолжить</button>
             </div>
         </main>
         <footer>
